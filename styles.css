@@ -512,11 +512,9 @@ h3 {
   color: rgba(255, 255, 255, 0.82);
 }
 
-.contact-card {
+.contact-form {
   display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
-  gap: 30px;
-  align-items: center;
+  gap: 16px;
   max-width: 840px;
   margin-top: 36px;
   padding: 30px;
@@ -526,64 +524,59 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.person-photo {
-  align-self: stretch;
-  min-height: 272px;
+.form-row {
   display: grid;
-  align-items: end;
-  justify-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #eef2ef, #d8e1da);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.person-photo img {
-  width: min(218px, 92%);
-  max-height: 268px;
-  object-fit: contain;
-}
-
-.contact-role {
-  color: var(--copper);
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.contact-details h3 {
-  margin-top: 6px;
-  font-size: 32px;
-}
-
-.contact-details dl {
+.contact-form label {
   display: grid;
-  gap: 14px;
-  margin: 22px 0 0;
-}
-
-.contact-details dl div {
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-}
-
-.contact-details dt {
+  gap: 8px;
   color: var(--muted);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.contact-details dd {
-  margin: 3px 0 0;
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   color: var(--ink);
-  font-size: 20px;
-  font-weight: 700;
-  overflow-wrap: anywhere;
+  background: #fff;
+  font: inherit;
+  text-transform: none;
 }
 
-.contact-details a {
-  color: var(--ink);
-  text-decoration: none;
+.contact-form textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(185, 148, 93, 0.35);
+  border-color: var(--gold);
+}
+
+.form-submit {
+  width: fit-content;
+  border: 0;
+  background: var(--forest);
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .site-footer {
@@ -679,9 +672,6 @@ h3 {
     min-height: 380px;
   }
 
-  .contact-card {
-    grid-template-columns: 185px minmax(0, 1fr);
-  }
 }
 
 @media (max-width: 620px) {
@@ -714,7 +704,7 @@ h3 {
   }
 
   .hero-panel,
-  .contact-card {
+  .contact-form {
     padding: 20px;
   }
 
@@ -741,12 +731,8 @@ h3 {
     min-height: 0;
   }
 
-  .contact-card {
+  .form-row {
     grid-template-columns: 1fr;
-  }
-
-  .person-photo {
-    min-height: 230px;
   }
 
   .site-footer {

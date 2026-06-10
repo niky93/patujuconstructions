@@ -30,3 +30,27 @@ document.addEventListener("keydown", (event) => {
     closeLightbox();
   }
 });
+
+const whatsappForm = document.querySelector("#whatsapp-form");
+
+if (whatsappForm) {
+  whatsappForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(whatsappForm);
+    const message = [
+      "Hola, quiero recibir informacion sobre Yvaga Homes.",
+      "",
+      `Nombre: ${formData.get("name") || ""}`,
+      `Telefono: ${formData.get("phone") || ""}`,
+      `Correo: ${formData.get("email") || ""}`,
+      `Ciudad o zona: ${formData.get("location") || ""}`,
+      `Lote: ${formData.get("lot") || ""}`,
+      `Presupuesto: ${formData.get("budget") || ""}`,
+      `Mensaje: ${formData.get("message") || ""}`
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/59168681141?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  });
+}

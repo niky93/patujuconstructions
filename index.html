@@ -218,35 +218,54 @@
         <div class="contact-panel">
           <div class="contact-copy">
             <p class="eyebrow">Contacto comercial</p>
-            <h2>Hablemos de tu proxima vivienda.</h2>
+            <h2>Estamos listos para ayudarte a dar el siguiente paso.</h2>
             <p>
-              Revisamos tu lote, presupuesto y necesidades para construir una propuesta
-              clara, viable y alineada al estilo de vida que quieres lograr.
+              Dejanos tus datos y enviaremos tu solicitud por WhatsApp para conversar
+              sobre tu lote, presupuesto y el hogar que quieres construir.
             </p>
           </div>
-          <div class="contact-card">
-            <div class="person-photo">
-              <img src="assets/page-11-image-03.png" alt="Maxsimon G. Ricaldi">
+          <form class="contact-form" id="whatsapp-form">
+            <div class="form-row">
+              <label>
+                Nombre completo
+                <input name="name" type="text" autocomplete="name" required>
+              </label>
+              <label>
+                Telefono / WhatsApp
+                <input name="phone" type="tel" autocomplete="tel" required>
+              </label>
             </div>
-            <div class="contact-details">
-              <span class="contact-role">Representante del proyecto</span>
-              <h3>Maxsimon G. Ricaldi</h3>
-              <dl>
-                <div>
-                  <dt>Telefono</dt>
-                  <dd><a href="tel:+59168681141">68681141</a></dd>
-                </div>
-                <div>
-                  <dt>Email</dt>
-                  <dd><a href="mailto:Maxsgriar@gmail.com">Maxsgriar@gmail.com</a></dd>
-                </div>
-                <div>
-                  <dt>Direccion</dt>
-                  <dd>Calle Barron No. 70</dd>
-                </div>
-              </dl>
+            <div class="form-row">
+              <label>
+                Correo electronico
+                <input name="email" type="email" autocomplete="email">
+              </label>
+              <label>
+                Ciudad o zona
+                <input name="location" type="text" autocomplete="address-level2">
+              </label>
             </div>
-          </div>
+            <div class="form-row">
+              <label>
+                Ya tienes lote?
+                <select name="lot">
+                  <option value="Si, ya tengo lote">Si, ya tengo lote</option>
+                  <option value="No, estoy buscando">No, estoy buscando</option>
+                  <option value="Quiero recibir orientacion">Quiero recibir orientacion</option>
+                </select>
+              </label>
+              <label>
+                Presupuesto aproximado
+                <input name="budget" type="text" placeholder="Ej. Bs. 250.000">
+              </label>
+            </div>
+            <label>
+              Mensaje
+              <textarea name="message" rows="4" placeholder="Cuentanos que tipo de hogar quieres construir"></textarea>
+            </label>
+            <button class="button primary form-submit" type="submit">Enviar solicitud por WhatsApp</button>
+            <p class="form-note">Tambien puedes escribir directamente al 68681141.</p>
+          </form>
         </div>
       </section>
     </main>
