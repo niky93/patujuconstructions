@@ -2,6 +2,30 @@ const lightbox = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox img");
 const closeButton = document.querySelector(".lightbox-close");
 
+document.body.classList.add("js-ready");
+
+const revealItems = document.querySelectorAll(
+  ".hero-content, .hero-panel, .house-hero-content, .house-summary, .reveal-row, .reveal-card"
+);
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
 document.querySelectorAll(".gallery-card").forEach((card) => {
   card.addEventListener("click", () => {
     const image = card.dataset.full;
