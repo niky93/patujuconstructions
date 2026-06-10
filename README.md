@@ -19,6 +19,7 @@ npx wrangler pages deploy . --project-name yvaga-homes
 ## Contenido
 
 - Presentación del proyecto.
+- Pagina individual `casa-yvaga.html` para presentar la casa como ficha de proyecto.
 - Objetivo y beneficios de la vivienda.
 - Servicios: construcción, diseño interior y financiamiento.
 - Proceso de trabajo: coordinación, planificación y supervisión.
