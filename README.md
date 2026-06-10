@@ -1,6 +1,6 @@
 # Yvága Homes
 
-Sitio web estático para presentar la información del brochure **Yvága Homes** de Patuju Constructions Capital.
+Sitio web estático para presentar la información del brochure **Yvága Homes** de Patuju Construcciones.
 
 ## Como abrirlo
 
