@@ -1,0 +1,11 @@
+{
+  "name": "yvaga-homes",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler pages deploy . --project-name yvaga-homes"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
