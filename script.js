@@ -1,8 +1,36 @@
 const lightbox = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox img");
 const closeButton = document.querySelector(".lightbox-close");
+const siteHeader = document.querySelector(".site-header");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelectorAll(".nav-links a");
 
 document.body.classList.add("js-ready");
+
+function syncHeader() {
+  if (!siteHeader) return;
+  siteHeader.classList.toggle("is-scrolled", window.scrollY > 18);
+}
+
+syncHeader();
+window.addEventListener("scroll", syncHeader, { passive: true });
+
+if (siteHeader && menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+    siteHeader.classList.toggle("is-open", !isOpen);
+    document.body.classList.toggle("nav-open", !isOpen);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuToggle.setAttribute("aria-expanded", "false");
+      siteHeader.classList.remove("is-open");
+      document.body.classList.remove("nav-open");
+    });
+  });
+}
 
 const revealItems = document.querySelectorAll(
   ".hero-content, .hero-panel, .house-hero-content, .house-summary, .reveal-row, .reveal-card"
@@ -26,34 +54,36 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-document.querySelectorAll(".gallery-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    const image = card.dataset.full;
-    const alt = card.querySelector("img").alt;
-    lightboxImage.src = image;
-    lightboxImage.alt = alt;
-    lightbox.hidden = false;
+if (lightbox && lightboxImage) {
+  document.querySelectorAll(".gallery-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const image = card.dataset.full;
+      const alt = card.querySelector("img").alt;
+      lightboxImage.src = image;
+      lightboxImage.alt = alt;
+      lightbox.hidden = false;
+    });
   });
-});
 
-function closeLightbox() {
-  lightbox.hidden = true;
-  lightboxImage.src = "";
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImage.src = "";
+  }
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
 }
-
-closeButton.addEventListener("click", closeLightbox);
-
-lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    closeLightbox();
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !lightbox.hidden) {
-    closeLightbox();
-  }
-});
 
 const whatsappForm = document.querySelector("#whatsapp-form");
 

@@ -6,162 +6,168 @@
     <title>Casa Yvaga | Patuju Construcciones</title>
     <meta
       name="description"
-      content="Casa Yvaga: modelo residencial con luz natural, jardin interior, privacidad y construccion integral."
+      content="Presentacion de la casa Yvaga Homes: ambientes, atributos de diseno, construccion y contacto por WhatsApp."
     >
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23122e28'/%3E%3Cpath d='M14 38 32 18l18 20v12H38V36H26v14H14z' fill='%23e7c391'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="propuesta-editorial.css">
-    <link rel="stylesheet" href="casa-yvaga-propuesta.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body class="house-proposal-page">
-    <header class="proposal-header" aria-label="Navegacion principal">
-      <a class="proposal-brand" href="index.html" aria-label="Volver a Yvaga Homes">
+  <body class="home-page">
+    <header class="site-header" aria-label="Navegacion principal">
+      <a class="brand" href="index.html" aria-label="Volver al inicio">
         <img src="assets/page-11-image-04.jpg" alt="Patuju Construcciones">
         <span>
-          <strong>Casa Yvaga</strong>
-          <small>Yvaga Homes</small>
+          <strong>Patuju Construcciones</strong>
+          <small>Construccion Capital</small>
         </span>
       </a>
-      <nav class="proposal-nav" aria-label="Secciones">
+      <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        Menu
+      </button>
+      <nav class="nav-links" id="main-nav" aria-label="Secciones">
+        <a href="index.html">Inicio</a>
         <a href="#ambientes">Ambientes</a>
         <a href="#detalles">Detalles</a>
-        <a href="#galeria">Galeria</a>
+        <a href="#galeria-casa">Galeria</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="proposal-action" href="#contacto">Solicitar</a>
+      <a class="header-action" href="#contacto">Solicitar informacion</a>
     </header>
 
     <main>
-      <section class="house-editorial-hero" id="inicio">
-        <div class="house-hero-image">
-          <img src="assets/page-09-image-02.jpg" alt="Vista principal de Casa Yvaga">
-        </div>
-        <div class="house-hero-copy">
+      <section class="house-hero">
+        <img src="assets/page-09-image-02.jpg" alt="Vista interior principal de Yvaga Homes">
+        <div class="house-hero-shade"></div>
+        <div class="house-hero-content">
           <p class="eyebrow">Modelo residencial</p>
           <h1>Casa Yvaga</h1>
           <p>
-            Una vivienda pensada para sentirse amplia, privada y natural desde la llegada:
-            luz, altura, jardin interior y ambientes conectados para la vida familiar.
+            Un hogar pensado para vivir con frescura, luz natural, privacidad y detalles
+            de naturaleza integrados al recorrido diario.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#contacto">Solicitar informacion</a>
-            <a class="button secondary" href="#galeria">Ver galeria</a>
-          </div>
+          <a class="button primary hero-inline-action" href="#contacto">Solicitar informacion</a>
+        </div>
+        <div class="house-summary" aria-label="Resumen de la casa">
+          <article>
+            <span>Estilo</span>
+            <strong>Colonial moderno</strong>
+          </article>
+          <article>
+            <span>Ambiente</span>
+            <strong>Fresco y luminoso</strong>
+          </article>
+          <article>
+            <span>Servicio</span>
+            <strong>Construccion integral</strong>
+          </article>
         </div>
       </section>
 
-      <section class="house-spec-strip" aria-label="Resumen de la casa">
-        <article>
-          <span>Estilo</span>
-          <strong>Colonial moderno</strong>
-        </article>
-        <article>
-          <span>Ambiente</span>
-          <strong>Fresco y luminoso</strong>
-        </article>
-        <article>
-          <span>Servicio</span>
-          <strong>Construccion integral</strong>
-        </article>
-      </section>
-
-      <section class="house-intro-alt">
-        <p class="eyebrow">Tu hogar en el paraiso</p>
-        <h2>Un modelo disenado para adaptarse al lote y al ritmo de tu familia.</h2>
+      <section class="house-intro reveal-row">
+        <div>
+          <p class="eyebrow">Tu hogar en el paraiso</p>
+          <h2>Una casa disenada para sentirse amplia, natural y privada.</h2>
+        </div>
         <p>
-          La casa combina distribucion funcional, altura piso-techo, iluminacion natural
-          y un recorrido interior con vegetacion para crear una experiencia mas fresca,
-          acogedora y privada.
+          Yvaga Homes combina una distribucion funcional con altura piso-techo,
+          iluminacion natural y jardin interior. El resultado es una vivienda que se
+          adapta al lote donde quieras vivir y al ritmo de tu familia.
         </p>
       </section>
 
-      <section class="living-editorial" id="ambientes">
-        <article class="living-feature">
-          <div class="living-feature-image">
+      <section class="living-sections" id="ambientes">
+        <article class="living-row reveal-row">
+          <div class="living-image">
             <img src="assets/page-09-image-03.jpg" alt="Sala, cocina y jardin interior">
           </div>
-          <div class="living-feature-copy">
+          <div class="living-copy">
             <span>Ambiente social</span>
             <h2>Sala integrada con recorrido natural</h2>
             <p>El hall, el pasillo peatonal y el jardin interior conectan la llegada con la sala para crear una experiencia calida desde el ingreso.</p>
           </div>
         </article>
-        <article class="living-feature reverse">
-          <div class="living-feature-image">
-            <img src="assets/page-09-image-05.jpg" alt="Cocina integrada de Casa Yvaga">
+        <article class="living-row reverse reveal-row">
+          <div class="living-image">
+            <img src="assets/page-09-image-05.jpg" alt="Cocina integrada">
           </div>
-          <div class="living-feature-copy">
+          <div class="living-copy">
             <span>Cocina</span>
             <h2>Espacio funcional para compartir</h2>
             <p>Una cocina integrada que acompana la vida familiar y facilita la conexion entre ambientes.</p>
           </div>
         </article>
-        <article class="living-feature">
-          <div class="living-feature-image">
-            <img src="assets/page-10-image-04.jpg" alt="Sala moderna de Casa Yvaga">
+        <article class="living-row reveal-row">
+          <div class="living-image">
+            <img src="assets/page-10-image-04.jpg" alt="Sala moderna de Yvaga Homes">
           </div>
-          <div class="living-feature-copy">
+          <div class="living-copy">
             <span>Confort</span>
             <h2>Luz, frescura y privacidad</h2>
-            <p>Ventanas bien distribuidas y altura interior para una casa mas fresca, luminosa y comoda.</p>
+            <p>Ventanas bien distribuidas y altura interior para una casa mas fresca y luminosa.</p>
           </div>
         </article>
       </section>
 
-      <section class="detail-editorial" id="detalles">
+      <section class="detail-band" id="detalles">
         <div class="section-heading">
           <p class="eyebrow">Detalles del modelo</p>
-          <h2>Elementos que hacen diferente a Casa Yvaga.</h2>
+          <h2>Elementos que hacen diferente a Yvaga Homes.</h2>
         </div>
-        <div class="detail-editorial-grid">
-          <article>
+        <div class="detail-list reveal-group">
+          <article class="reveal-card">
             <span>01</span>
             <h3>Altura piso-techo</h3>
-            <p>Mayor sensacion de amplitud y mejor comportamiento termico en ambientes principales.</p>
+            <p>Mayor sensacion de amplitud y mejor comportamiento termico en los ambientes principales.</p>
           </article>
-          <article>
+          <article class="reveal-card">
             <span>02</span>
             <h3>Jardin interior</h3>
             <p>Un toque natural que acompana el recorrido de la casa y mejora la experiencia de llegada.</p>
           </article>
-          <article>
+          <article class="reveal-card">
             <span>03</span>
             <h3>Privacidad familiar</h3>
             <p>Distribucion pensada para vivir con tranquilidad, comodidad y espacios acogedores.</p>
           </article>
-          <article>
+          <article class="reveal-card">
             <span>04</span>
             <h3>Construccion solida</h3>
-            <p>Materiales de buena calidad, acabados cuidados y supervision durante el avance.</p>
+            <p>Materiales de buena calidad, acabados cuidados y supervision durante el avance de obra.</p>
           </article>
         </div>
       </section>
 
-      <section class="gallery-editorial" id="galeria">
+      <section class="house-gallery" id="galeria-casa">
         <div class="section-heading">
           <p class="eyebrow">Galeria</p>
           <h2>Visualiza la experiencia de hogar.</h2>
         </div>
-        <div class="gallery-editorial-grid" aria-label="Galeria de Casa Yvaga">
-          <button class="gallery-card tall" type="button" data-full="assets/page-09-image-02.jpg">
-            <img src="assets/page-09-image-02.jpg" alt="Vista principal de Casa Yvaga">
+        <div class="gallery" aria-label="Galeria de la casa Yvaga">
+          <button class="gallery-card wide" type="button" data-full="assets/page-09-image-02.jpg">
+            <img src="assets/page-09-image-02.jpg" alt="Vista interior de la casa Yvaga">
           </button>
           <button class="gallery-card" type="button" data-full="assets/page-09-image-04.jpg">
-            <img src="assets/page-09-image-04.jpg" alt="Render interior de Casa Yvaga">
+            <img src="assets/page-09-image-04.jpg" alt="Render de ambiente interior">
           </button>
           <button class="gallery-card" type="button" data-full="assets/page-10-image-03.jpg">
             <img src="assets/page-10-image-03.jpg" alt="Vista de corredor y jardin">
           </button>
           <button class="gallery-card wide" type="button" data-full="assets/page-10-image-05.jpg">
-            <img src="assets/page-10-image-05.jpg" alt="Ambiente interior de Casa Yvaga">
+            <img src="assets/page-10-image-05.jpg" alt="Ambiente interior de Yvaga Homes">
           </button>
         </div>
       </section>
 
-      <section class="contact-alt house-contact" id="contacto">
+      <section class="house-cta reveal-row" id="contacto">
         <div class="contact-copy">
           <p class="eyebrow">Solicita informacion</p>
           <h2>Quieres construir tu Yvaga Home?</h2>
-          <p>Completa tus datos y enviaremos tu solicitud por WhatsApp para revisar ubicacion, lote, presupuesto y alcance.</p>
+          <p>
+            Completa tus datos y envia la solicitud por WhatsApp. Luego podremos revisar
+            ubicacion, lote, presupuesto y el alcance del proyecto.
+          </p>
         </div>
         <form class="contact-form" id="whatsapp-form">
           <div class="form-row">
@@ -208,14 +214,17 @@
       </section>
     </main>
 
-    <footer class="proposal-footer">
-      <strong>Patuju Construcciones</strong>
-      <a href="#inicio">Volver arriba</a>
+    <footer class="site-footer">
+      <div>
+        <strong>Patuju Construcciones</strong>
+        <p>Construccion residencial, diseno interior y gestion de financiamiento.</p>
+      </div>
+      <a href="index.html">Volver al inicio</a>
     </footer>
 
     <div class="lightbox" hidden>
       <button class="lightbox-close" type="button" aria-label="Cerrar galeria">x</button>
-      <img src="" alt="Imagen ampliada de Casa Yvaga">
+      <img src="" alt="Imagen ampliada del catalogo">
     </div>
 
     <script src="script.js"></script>
