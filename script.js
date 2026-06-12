@@ -1,6 +1,9 @@
 const lightbox = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox img");
 const closeButton = document.querySelector(".lightbox-close");
+const previousButton = document.querySelector(".lightbox-prev");
+const nextButton = document.querySelector(".lightbox-next");
+const lightboxCounter = document.querySelector(".lightbox-counter");
 const siteHeader = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelectorAll(".nav-links a");
@@ -55,22 +58,42 @@ if ("IntersectionObserver" in window) {
 }
 
 if (lightbox && lightboxImage) {
-  document.querySelectorAll(".gallery-card").forEach((card) => {
+  const galleryCards = Array.from(document.querySelectorAll(".gallery-card"));
+  let currentImageIndex = 0;
+  let lastFocusedCard = null;
+
+  function showImage(index) {
+    currentImageIndex = (index + galleryCards.length) % galleryCards.length;
+    const card = galleryCards[currentImageIndex];
+    const image = card.dataset.full;
+    const alt = card.querySelector("img").alt;
+    lightboxImage.src = image;
+    lightboxImage.alt = alt;
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryCards.length}`;
+    }
+  }
+
+  galleryCards.forEach((card, index) => {
     card.addEventListener("click", () => {
-      const image = card.dataset.full;
-      const alt = card.querySelector("img").alt;
-      lightboxImage.src = image;
-      lightboxImage.alt = alt;
+      lastFocusedCard = card;
+      showImage(index);
       lightbox.hidden = false;
+      document.body.classList.add("lightbox-open");
+      closeButton?.focus();
     });
   });
 
   function closeLightbox() {
     lightbox.hidden = true;
     lightboxImage.src = "";
+    document.body.classList.remove("lightbox-open");
+    lastFocusedCard?.focus();
   }
 
-  closeButton.addEventListener("click", closeLightbox);
+  closeButton?.addEventListener("click", closeLightbox);
+  previousButton?.addEventListener("click", () => showImage(currentImageIndex - 1));
+  nextButton?.addEventListener("click", () => showImage(currentImageIndex + 1));
 
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
@@ -81,6 +104,12 @@ if (lightbox && lightboxImage) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !lightbox.hidden) {
       closeLightbox();
+    }
+    if (event.key === "ArrowLeft" && !lightbox.hidden) {
+      showImage(currentImageIndex - 1);
+    }
+    if (event.key === "ArrowRight" && !lightbox.hidden) {
+      showImage(currentImageIndex + 1);
     }
   });
 }

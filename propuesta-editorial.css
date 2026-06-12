@@ -40,6 +40,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body.lightbox-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;
