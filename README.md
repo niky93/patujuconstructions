@@ -29,3 +29,7 @@ Configuracion equivalente desde el panel:
 - Comando de deploy: `npx wrangler deploy`
 - Directorio de salida: `dist`
 - Version de Node.js: 20 o superior
+
+Para SEO, configura una variable de build llamada `SITE_URL` con la URL publica
+sin barra final, por ejemplo `https://www.ejemplo.com`. El build generara
+automaticamente etiquetas canonical y `sitemap.xml`.
