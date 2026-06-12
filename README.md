@@ -15,16 +15,17 @@ npm run build
 
 El comando genera `dist/` con solo los archivos publicos. Los respaldos y propuestas de trabajo no se incluyen.
 
-## Publicar en Cloudflare Pages
+## Publicar en Cloudflare Workers
 
 ```bash
 npm run deploy
 ```
 
-Proyecto de Cloudflare Pages: `yvaga-homes`.
+Worker: `patujuconstrucciones`.
 
 Configuracion equivalente desde el panel:
 
 - Comando de build: `npm run build`
+- Comando de deploy: `npx wrangler deploy`
 - Directorio de salida: `dist`
 - Version de Node.js: 20 o superior
