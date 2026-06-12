@@ -1,27 +1,30 @@
-# Yvága Homes
+# Yvaga Homes
 
-Sitio web estático para presentar la información del brochure **Yvága Homes** de Patuju Construcciones.
+Sitio web estatico de Yvaga Homes y Casa Yvaga para Patuju Construcciones.
 
-## Como abrirlo
+## Desarrollo local
 
-Abre `index.html` en el navegador. No requiere instalar dependencias.
+Abre `index.html` directamente en el navegador. No requiere servidor ni proceso de compilacion.
 
-## Despliegue en Cloudflare Pages
-
-Proyecto estatico sin build. Directorio de publicacion: raiz del repo (`/`).
-
-Comando directo:
+## Preparar publicacion
 
 ```bash
-npx wrangler pages deploy . --project-name yvaga-homes
+npm install
+npm run build
 ```
 
-## Contenido
+El comando genera `dist/` con solo los archivos publicos. Los respaldos y propuestas de trabajo no se incluyen.
 
-- Presentación del proyecto.
-- Pagina individual `casa-yvaga.html` para presentar la casa como ficha de proyecto.
-- Objetivo y beneficios de la vivienda.
-- Servicios: construcción, diseño interior y financiamiento.
-- Proceso de trabajo: coordinación, planificación y supervisión.
-- Galería con imágenes extraídas del brochure.
-- Datos de contacto.
+## Publicar en Cloudflare Pages
+
+```bash
+npm run deploy
+```
+
+Proyecto de Cloudflare Pages: `yvaga-homes`.
+
+Configuracion equivalente desde el panel:
+
+- Comando de build: `npm run build`
+- Directorio de salida: `dist`
+- Version de Node.js: 20 o superior

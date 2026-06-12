@@ -2,8 +2,12 @@
   "name": "yvaga-homes",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "deploy": "wrangler pages deploy . --project-name yvaga-homes"
+    "build": "node scripts/build.mjs",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name yvaga-homes"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
